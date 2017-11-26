@@ -14,9 +14,14 @@ var j = schedule.scheduleJob('*/10 * * * * *', () => {
 
 const app = express()
 
-app.get('/pings', (req, res) => {
-    repo.get_all().then(rows => res.send(rows))
+app.use(express.static('static'))
+
+app.get('/ping', (req, res) => {
+    repo.get_all().then(rows => {
+        res.send(rows.map(row => ({x: row.timestamp, y: row.latency})))
+    })
 })
+
 
 app.listen(3000, () => console.log('App listening on port 3000!'))
 
