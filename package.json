@@ -1,0 +1,17 @@
+{
+  "name": "monitor-ping",
+  "version": "1.0.0",
+  "description": "Monitor connectivity to the Internet over time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vincent Verhoeven",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-schedule": "^1.2.5",
+    "ping": "^0.2.2",
+    "sqlite3": "^3.1.13"
+  }
+}
